@@ -2,8 +2,10 @@ def find_next_empty(puzzle):
     for r in range(9):
         for c in range(9):
             if puzzle[r][c] == -1:
-                return r,c
+                return r, c
     return None, None
+
+
 def is_valid(puzzle, guess, row, col):
     row_vals = puzzle[row]
     if guess in row_vals:
@@ -25,6 +27,8 @@ def is_valid(puzzle, guess, row, col):
                 return False
 
     return True
+
+
 def sodoku_solver(puzzle):
     row, col = find_next_empty(puzzle)
 
@@ -41,3 +45,6 @@ def sodoku_solver(puzzle):
         puzzle[row][col] = -1
 
     return False
+
+
+"""Reversing the logic to create a Sudoku maker"""
